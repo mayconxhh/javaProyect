@@ -10,8 +10,19 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
+import com.healthmarketscience.jackcess.ColumnBuilder;
+import com.healthmarketscience.jackcess.DataType;
+import com.healthmarketscience.jackcess.Database;
+import com.healthmarketscience.jackcess.DatabaseBuilder;
+import com.healthmarketscience.jackcess.IndexBuilder;
+import com.healthmarketscience.jackcess.Table;
+import com.healthmarketscience.jackcess.TableBuilder;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,8 +39,8 @@ public class Clinica extends javax.swing.JFrame {
         departamentCbx.setUI(Propiedades.createUI(rootPane));
         distritCbx.setUI(Propiedades.createUI(rootPane));
         provinceCbx.setUI(Propiedades.createUI(rootPane));
-        this.loadData();
-        
+        connection a = new connection();
+        a.conexion();        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -575,7 +586,7 @@ public class Clinica extends javax.swing.JFrame {
     private void rSMTextFull12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFull12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSMTextFull12ActionPerformed
-
+    
     int cant = 0;
     int cantT = 0;
     String[][] loc;
@@ -629,7 +640,7 @@ public class Clinica extends javax.swing.JFrame {
         JsonParser parser = new JsonParser();
         FileReader fr = null;
         try {
-            fr = new FileReader("C:\\Users\\Familia\\Desktop\\ubigeo-peru.json");
+            fr = new FileReader("C:\\Users\\Familia\\Desktop\\ubigeo-peru.min.json");
         } catch (FileNotFoundException e) {
 
         }
@@ -669,7 +680,7 @@ public class Clinica extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
