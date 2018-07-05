@@ -26,8 +26,8 @@ public class Clinica extends javax.swing.JFrame {
         initComponents();
         jComboBox1.setUI(Propiedades.createUI(rootPane));
         departamentCbx.setUI(Propiedades.createUI(rootPane));
-        jComboBox3.setUI(Propiedades.createUI(rootPane));
-        jComboBox4.setUI(Propiedades.createUI(rootPane));
+        distritCbx.setUI(Propiedades.createUI(rootPane));
+        provinceCbx.setUI(Propiedades.createUI(rootPane));
         this.loadData();
         
     }
@@ -60,8 +60,8 @@ public class Clinica extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         departamentCbx = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        distritCbx = new javax.swing.JComboBox<>();
+        provinceCbx = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -167,19 +167,19 @@ public class Clinica extends javax.swing.JFrame {
             }
         });
 
-        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        distritCbx.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        distritCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        distritCbx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                distritCbxActionPerformed(evt);
             }
         });
 
-        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        provinceCbx.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        provinceCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        provinceCbx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                provinceCbxActionPerformed(evt);
             }
         });
 
@@ -324,11 +324,11 @@ public class Clinica extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(provinceCbx, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(jLabel12)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(distritCbx, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel13)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -410,9 +410,9 @@ public class Clinica extends javax.swing.JFrame {
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(departamentCbx, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(provinceCbx, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(distritCbx, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -472,15 +472,57 @@ public class Clinica extends javax.swing.JFrame {
 
     private void departamentCbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departamentCbxActionPerformed
         // TODO add your handling code here:
+        int idx = departamentCbx.getSelectedIndex();
+        String cd;
+        if (idx > 9) {
+            cd = "" + idx;
+        } else {
+            cd = "0" + idx;
+        }
+        
+        provinceCbx.removeAllItems();
+        provinceCbx.addItem("Seleccionar");
+
+        int cont = 0;
+        int cont2 = 1;
+        String let = cd + "0" + cont2;
+        while (cont < loc.length) {
+            String a = "";
+            if (cont2 > 9) {
+                a = cd + "" + cont2 + "00";
+            } else {
+                a = cd + "0" + cont2 + "00";
+            }
+
+            String count = loc[cont][0] + loc[cont][1];
+
+            while (let.equals(count)) {
+                String b = "";
+                for (int j = 0; j < 4; j++) {
+                    if (a.equals(b)) {
+                        provinceCbx.addItem(loc[cont][j]);
+                        cont2++;
+                        if (cont2 > 9) {
+                            let = cd + "" + cont2;
+                        } else {
+                            let = cd + "0" + cont2;
+                        }
+                    } else {
+                        b = b + loc[cont][j];
+                    }
+                }
+            }
+            cont++;
+        }
     }//GEN-LAST:event_departamentCbxActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void distritCbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distritCbxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_distritCbxActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void provinceCbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_provinceCbxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_provinceCbxActionPerformed
 
     private void rSButtonRiple1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple1ActionPerformed
         // TODO add your handling code here:
@@ -619,9 +661,8 @@ public class Clinica extends javax.swing.JFrame {
     //Estilos
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> departamentCbx;
+    private javax.swing.JComboBox<String> distritCbx;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -645,6 +686,7 @@ public class Clinica extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JComboBox<String> provinceCbx;
     private rojeru_san.RSButtonRiple rSButtonRiple1;
     private rojeru_san.RSButtonRiple rSButtonRiple2;
     private rojeru_san.RSButtonRiple rSButtonRiple4;
