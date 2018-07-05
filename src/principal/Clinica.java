@@ -39,8 +39,7 @@ public class Clinica extends javax.swing.JFrame {
         departamentCbx.setUI(Propiedades.createUI(rootPane));
         distritCbx.setUI(Propiedades.createUI(rootPane));
         provinceCbx.setUI(Propiedades.createUI(rootPane));
-        connection a = new connection();
-        a.conexion();        
+        this.loadData();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,6 +93,7 @@ public class Clinica extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
         rSMTextFull12 = new rojeru_san.RSMTextFull();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clinica");
@@ -274,6 +274,8 @@ public class Clinica extends javax.swing.JFrame {
             }
         });
 
+        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\Renzo\\Desktop\\logomini.png")); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -314,7 +316,6 @@ public class Clinica extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jSeparator1)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel18)
@@ -371,7 +372,11 @@ public class Clinica extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(jLabel16)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(rSMTextFull11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(rSMTextFull11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(271, 271, 271)
+                                    .addComponent(jLabel19)))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 765, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 19, Short.MAX_VALUE))))
             .addComponent(jSeparator2)
@@ -380,8 +385,13 @@ public class Clinica extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel19)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -640,7 +650,7 @@ public class Clinica extends javax.swing.JFrame {
         JsonParser parser = new JsonParser();
         FileReader fr = null;
         try {
-            fr = new FileReader("C:\\Users\\Familia\\Desktop\\ubigeo-peru.min.json");
+            fr = new FileReader("C:\\Users\\Renzo\\Desktop\\javaProyect\\src\\utils\\ubigeo-peru.min.json");
         } catch (FileNotFoundException e) {
 
         }
@@ -728,6 +738,7 @@ public class Clinica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
