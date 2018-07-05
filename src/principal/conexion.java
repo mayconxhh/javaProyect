@@ -11,8 +11,6 @@ import com.healthmarketscience.jackcess.TableBuilder;
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class conexion {
@@ -37,14 +35,28 @@ public class conexion {
         }
 
         try {
-            if (!db.getTableNames().contains("DB")) {
-                Table tblNew = new TableBuilder("DB")
+            if (!db.getTableNames().contains("CLINICA")) {
+                Table tblNew = new TableBuilder("CLINICA")
                         .addColumn(new ColumnBuilder("id", DataType.LONG)
-                                .setAutoNumber(true))
-                        .addColumn(new ColumnBuilder("name", DataType.TEXT))
-                        .addColumn(new ColumnBuilder("age", DataType.INT))
+                        .setAutoNumber(true))
+                        .addColumn(new ColumnBuilder("nombre", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("apellido", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("dni", DataType.INT))
+                        .addColumn(new ColumnBuilder("fecha", DataType.SHORT_DATE_TIME))
+                        .addColumn(new ColumnBuilder("ecivil", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("edad", DataType.INT))
+                        .addColumn(new ColumnBuilder("genero", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("alergia", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("departamento", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("provincia", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("distrito", DataType.INT))
+                        .addColumn(new ColumnBuilder("direccion", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("correo", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("telefono", DataType.INT))
+                        .addColumn(new ColumnBuilder("altura", DataType.DOUBLE))
+                        .addColumn(new ColumnBuilder("peso", DataType.DOUBLE))
                         .addIndex(new IndexBuilder(IndexBuilder.PRIMARY_KEY_NAME)
-                                .addColumns("id").setPrimaryKey())
+                        .addColumns("id").setPrimaryKey())
                         .toTable(db);
 
                 // Fill table by data
@@ -52,7 +64,7 @@ public class conexion {
                 tblNew.addRow(Column.AUTO_NUMBER, "Peter", 43);
                 tblNew.addRow(Column.AUTO_NUMBER, "Maycon", 21);*/
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
         }
         return null;
     }

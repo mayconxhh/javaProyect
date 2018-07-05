@@ -57,12 +57,12 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="rSMTextFull3" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="dni" min="-2" pref="150" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="rSMTextFull5" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="edad" min="-2" pref="147" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -70,22 +70,22 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="rSDateChooser1" min="-2" pref="183" max="-2" attributes="0"/>
+                                  <Component id="fecha" min="-2" pref="183" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel7" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="genero" min="-2" pref="200" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel9" min="-2" pref="73" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="rSMTextFull7" pref="156" max="32767" attributes="0"/>
-                              <Component id="rSMTextFull4" pref="0" max="32767" attributes="0"/>
+                              <Component id="alergia" pref="156" max="32767" attributes="0"/>
+                              <Component id="ecivil" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
@@ -96,48 +96,48 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rSMTextFull12" min="-2" pref="82" max="-2" attributes="0"/>
+                                      <Component id="rSMTextFull12" min="-2" pref="96" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                      <Component id="rSMTextFull1" min="-2" pref="218" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="nombre" min="-2" pref="202" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="jLabel4" min="-2" pref="74" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rSMTextFull2" min="-2" pref="207" max="-2" attributes="0"/>
+                                      <Component id="apellido" min="-2" pref="207" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="departamento" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                       <Component id="departamentCbx" min="-2" pref="147" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Component id="provincia" min="-2" pref="90" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="provinceCbx" min="-2" pref="142" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                      <Component id="distrito" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="distritCbx" min="-2" pref="143" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                      <Component id="direccionn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="rSMTextFull6" min="-2" pref="186" max="-2" attributes="0"/>
+                                      <Component id="direccion" min="-2" pref="186" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                      <Component id="correoo" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="rSMTextFull8" min="-2" pref="157" max="-2" attributes="0"/>
+                                      <Component id="correo" min="-2" pref="157" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                      <Component id="telefonoo" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rSMTextFull9" min="-2" pref="151" max="-2" attributes="0"/>
+                                      <Component id="telefono" min="-2" pref="151" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                              <Component id="alturaa" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="rSMTextFull10" min="-2" pref="216" max="-2" attributes="0"/>
+                                              <Component id="altura" min="-2" pref="216" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
@@ -153,9 +153,9 @@
                                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                              <Component id="pesoo" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="rSMTextFull11" min="-2" max="-2" attributes="0"/>
+                                              <Component id="peso" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -192,8 +192,8 @@
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="rSMTextFull2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="rSMTextFull1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="apellido" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombre" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jLabel18" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="rSMTextFull12" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -201,9 +201,9 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="rSMTextFull3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rSDateChooser1" min="-2" max="-2" attributes="0"/>
-                      <Component id="rSMTextFull4" min="-2" max="-2" attributes="0"/>
+                      <Component id="dni" min="-2" max="-2" attributes="0"/>
+                      <Component id="fecha" min="-2" max="-2" attributes="0"/>
+                      <Component id="ecivil" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="1" min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
@@ -212,7 +212,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="genero" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="jLabel2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
@@ -220,10 +220,10 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rSMTextFull7" min="-2" max="-2" attributes="0"/>
+                              <Component id="alergia" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel8" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="rSMTextFull5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="edad" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -232,39 +232,39 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel10" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jLabel11" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="departamento" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="provincia" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="departamentCbx" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="provinceCbx" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="jLabel12" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="distrito" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="distritCbx" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel13" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="rSMTextFull6" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="direccionn" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="direccion" min="-2" max="-2" attributes="0"/>
+                                      <Component id="correoo" min="-2" pref="28" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="rSMTextFull8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rSMTextFull9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="correo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="telefono" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="alturaa" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Component id="jLabel14" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="telefonoo" min="-2" pref="35" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel16" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="rSMTextFull11" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="pesoo" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="peso" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <Component id="rSMTextFull10" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="altura" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -301,45 +301,45 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
           </AccessibilityProperties>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull1">
+        <Component class="rojeru_san.RSMTextFull" name="nombre">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="Nombre"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSMTextFull1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreActionPerformed"/>
           </Events>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull2">
+        <Component class="rojeru_san.RSMTextFull" name="apellido">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="Apellido"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull3">
+        <Component class="rojeru_san.RSMTextFull" name="dni">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="DNI"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.componentes.RSDateChooser" name="rSDateChooser1">
+        <Component class="rojeru_san.componentes.RSDateChooser" name="fecha">
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull4">
+        <Component class="rojeru_san.RSMTextFull" name="ecivil">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="Estado Civil"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull5">
+        <Component class="rojeru_san.RSMTextFull" name="edad">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="Edad"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull7">
+        <Component class="rojeru_san.RSMTextFull" name="alergia">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="Alergia"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSMTextFull7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alergiaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="genero">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
@@ -353,7 +353,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generoActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -367,7 +367,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c0" green="70" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Genero:"/>
+            <Property name="text" type="java.lang.String" value="G&#xe9;nero:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -501,7 +501,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="departamento">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -512,7 +512,7 @@
             <Property name="text" type="java.lang.String" value="Departamento:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel11">
+        <Component class="javax.swing.JLabel" name="provincia">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -523,7 +523,7 @@
             <Property name="text" type="java.lang.String" value="Provincia:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
+        <Component class="javax.swing.JLabel" name="distrito">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -534,7 +534,7 @@
             <Property name="text" type="java.lang.String" value="Distrito:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
+        <Component class="javax.swing.JLabel" name="direccionn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -545,12 +545,12 @@
             <Property name="text" type="java.lang.String" value="Direcci&#xf3;n:"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull6">
+        <Component class="rojeru_san.RSMTextFull" name="direccion">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="Direcci&#xf3;n"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
+        <Component class="javax.swing.JLabel" name="telefonoo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -561,7 +561,7 @@
             <Property name="text" type="java.lang.String" value="Telefono:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel15">
+        <Component class="javax.swing.JLabel" name="correoo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -572,11 +572,11 @@
             <Property name="text" type="java.lang.String" value="Correo:"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull8">
+        <Component class="rojeru_san.RSMTextFull" name="correo">
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull9">
+        <Component class="rojeru_san.RSMTextFull" name="telefono">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel16">
+        <Component class="javax.swing.JLabel" name="pesoo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -587,7 +587,7 @@
             <Property name="text" type="java.lang.String" value="Peso:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel17">
+        <Component class="javax.swing.JLabel" name="alturaa">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -598,12 +598,12 @@
             <Property name="text" type="java.lang.String" value="Altura:"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull10">
+        <Component class="rojeru_san.RSMTextFull" name="altura">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="Altura"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.RSMTextFull" name="rSMTextFull11">
+        <Component class="rojeru_san.RSMTextFull" name="peso">
           <Properties>
             <Property name="placeholder" type="java.lang.String" value="Peso:"/>
           </Properties>
@@ -689,11 +689,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel19">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Renzo\Desktop\logomini.png"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
