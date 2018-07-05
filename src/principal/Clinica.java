@@ -469,11 +469,12 @@ public class Clinica extends javax.swing.JFrame {
     private void rSMTextFull7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFull7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSMTextFull7ActionPerformed
-
+    
+    String cd;
     private void departamentCbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departamentCbxActionPerformed
         // TODO add your handling code here:
         int idx = departamentCbx.getSelectedIndex();
-        String cd;
+        
         if (idx > 9) {
             cd = "" + idx;
         } else {
@@ -522,6 +523,49 @@ public class Clinica extends javax.swing.JFrame {
 
     private void provinceCbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_provinceCbxActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+        int idx = provinceCbx.getSelectedIndex();
+        String cp;
+        if (idx > 9) {
+            cp = "" + idx;
+        } else {
+            cp = "0" + idx;
+        }
+        
+        distritCbx.removeAllItems();
+        distritCbx.addItem("Seleccionar");
+
+        int cont = 0;
+        int cont2 = 1;
+        String let = cd + cp + "0" + cont2;
+        while (cont < loc.length) {
+            String a = "";
+            if (cont2 > 9) {
+                a = cd + cp + "" + cont2;
+            } else {
+                a = cd + cp + "0" + cont2;
+            }
+
+            String count = loc[cont][0] + loc[cont][1] + loc[cont][2];
+
+            while (let.equals(count)) {
+                String b = "";
+                for (int j = 0; j < 4; j++) {
+                    if (a.equals(b)) {
+                        distritCbx.addItem(loc[cont][j]);
+                        cont2++;
+                        if (cont2 > 9) {
+                            let = cd + cp + "" + cont2;
+                        } else {
+                            let = cd + cp + "0" + cont2;
+                        }
+                    } else {
+                        b = b + loc[cont][j];
+                    }
+                }
+            }
+            cont++;
+        }
     }//GEN-LAST:event_provinceCbxActionPerformed
 
     private void rSButtonRiple1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple1ActionPerformed
