@@ -617,6 +617,23 @@ public class Clinica extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "No se guardo los datos!");
             }
             
+            java.util.Date f = new java.util.Date();
+            nombre.setText("");
+            apellido.setText("");
+            dni.setText("");
+            fecha.setDatoFecha(f);
+            ecivil.setText("");
+            edad.setText("");
+            genero.setSelectedIndex(0);
+            alergia.setText("");
+            departamentCbx.setSelectedItem(0);
+            provinceCbx.setSelectedItem(0);
+            distritCbx.setSelectedItem(0);
+            direccion.setText("");
+            correo.setText("");
+            telefono.setText("");
+            peso.setText("");
+            
         } catch (SQLException ex) {
             System.out.println("Ocurrió un error al conectar con base de datos:"+ex);
         }
