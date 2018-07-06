@@ -30,6 +30,7 @@ public class Clinica extends javax.swing.JFrame {
         departamentCbx.setUI(Propiedades.createUI(rootPane));
         distritCbx.setUI(Propiedades.createUI(rootPane));
         provinceCbx.setUI(Propiedades.createUI(rootPane));
+        this.loadData();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -578,33 +579,32 @@ public class Clinica extends javax.swing.JFrame {
     }//GEN-LAST:event_provinceCbxActionPerformed
 
     private void rSButtonRiple1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple1ActionPerformed
-        
-        String sqlQuery = "INSERT INTO [CLINICA] (id, nombre, apellido, dni, fecha, ecivil, edad, genero, alergia, departamento, provincia, distrito, direccion, correo, telefono, altura, peso) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        
+      
         try {
+            Conexion conn = new Conexion();
                         
-            conexion conn = new conexion();
-            PreparedStatement consult= conn.getConnection().prepareStatement(sqlQuery);
+            String sqlQuery = "INSERT INTO CLINICA(id, nombre, apellido, dni, ecivil, edad, genero, alergia, departamento, provincia, distrito, direccion, correo, telefono, altura, peso) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            PreparedStatement consult = conn.getConnection().prepareStatement(sqlQuery);
+
             consult.setString(1, nombre.getText());
             consult.setString(2, apellido.getText());
-            consult.setInt(3, Integer.parseInt(dni.getText()));
-            consult.setString(4, fecha.getFormatoFecha());
-            consult.setString(5, ecivil.getText());
-            consult.setInt(6, Integer.parseInt(edad.getText()));
-            consult.setString(7, (String) genero.getSelectedItem());
-            consult.setString(8, alergia.getText());
-            consult.setString(9, (String) departamentCbx.getSelectedItem());
-            consult.setString(10, (String) provinceCbx.getSelectedItem());
-            consult.setString(11, (String) distritCbx.getSelectedItem());
-            consult.setString(12, direccion.getText());
-            consult.setString(13, correo.getText());
-            consult.setInt(14, Integer.parseInt(telefono.getText()));
-            consult.setInt(15, Integer.parseInt(altura.getText()));
-            consult.setInt(16, Integer.parseInt(peso.getText()));
-            
-            boolean result = consult.execute(sqlQuery);
-            
-            if (result) {
+            consult.setString(3, dni.getText());
+            //consult.setDate(4, fecha.getDatoFecha());
+            consult.setString(4, ecivil.getText());
+            consult.setString(5, edad.getText());
+            consult.setString(6, (String) genero.getSelectedItem());
+            consult.setString(7, alergia.getText());
+            consult.setString(8, (String) departamentCbx.getSelectedItem());
+            consult.setString(9, (String) provinceCbx.getSelectedItem());
+            consult.setString(10, (String) distritCbx.getSelectedItem());
+            consult.setString(11, direccion.getText());
+            consult.setString(12, correo.getText());
+            consult.setString(13, telefono.getText());
+            consult.setString(14, altura.getText());
+            consult.setString(15, peso.getText());            
+            System.out.println("sadasdasd");
+            System.out.println("dfdfd");
+            if (consult.execute(sqlQuery)) {
                 JOptionPane.showMessageDialog(null, "Se guardaron los datos con éxito!");
             } else{
                 JOptionPane.showMessageDialog(null, "No se guardo los datos!");
