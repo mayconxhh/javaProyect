@@ -13,6 +13,7 @@ import com.google.gson.JsonPrimitive;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -583,35 +584,41 @@ public class Clinica extends javax.swing.JFrame {
         try {
             Conexion conn = new Conexion();
                         
-            String sqlQuery = "INSERT INTO CLINICA(id, nombre, apellido, dni, ecivil, edad, genero, alergia, departamento, provincia, distrito, direccion, correo, telefono, altura, peso) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sqlQuery = "INSERT INTO CLINICA(id, nombre, apellido, dni, fecha, ecivil, edad, genero, alergia, departamento, provincia, distrito, direccion, correo, telefono, altura, peso) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement consult = conn.getConnection().prepareStatement(sqlQuery);
 
+            java.util.Date utilStartDate = fecha.getDatoFecha();
+            java.sql.Date sqlStartDate = new java.sql.Date(utilStartDate.getTime());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            String date = sdf.format(sqlStartDate);
+            
             consult.setString(1, nombre.getText());
             consult.setString(2, apellido.getText());
             consult.setString(3, dni.getText());
-            //consult.setDate(4, fecha.getDatoFecha());
-            consult.setString(4, ecivil.getText());
-            consult.setString(5, edad.getText());
-            consult.setString(6, (String) genero.getSelectedItem());
-            consult.setString(7, alergia.getText());
-            consult.setString(8, (String) departamentCbx.getSelectedItem());
-            consult.setString(9, (String) provinceCbx.getSelectedItem());
-            consult.setString(10, (String) distritCbx.getSelectedItem());
-            consult.setString(11, direccion.getText());
-            consult.setString(12, correo.getText());
-            consult.setString(13, telefono.getText());
-            consult.setString(14, altura.getText());
-            consult.setString(15, peso.getText());            
+            consult.setString(4, date);
+            consult.setString(5, ecivil.getText());
+            consult.setString(6, edad.getText());
+            consult.setString(7, (String) genero.getSelectedItem());
+            consult.setString(8, alergia.getText());
+            consult.setString(9, (String) departamentCbx.getSelectedItem());
+            consult.setString(10, (String) provinceCbx.getSelectedItem());
+            consult.setString(11, (String) distritCbx.getSelectedItem());
+            consult.setString(12, direccion.getText());
+            consult.setString(13, correo.getText());
+            consult.setString(14, telefono.getText());
+            consult.setString(15, altura.getText());
+            consult.setString(16, peso.getText());            
             System.out.println("sadasdasd");
             System.out.println("dfdfd");
-            if (consult.execute(sqlQuery)) {
+            int result = consult.executeUpdate();
+            if (result>0) {
                 JOptionPane.showMessageDialog(null, "Se guardaron los datos con éxito!");
             } else{
                 JOptionPane.showMessageDialog(null, "No se guardo los datos!");
             }
             
         } catch (SQLException ex) {
-            System.out.println("Ocurrió un error al conectar con base de datos:"+ex);;
+            System.out.println("Ocurrió un error al conectar con base de datos:"+ex);
         }
     }//GEN-LAST:event_rSButtonRiple1ActionPerformed
 

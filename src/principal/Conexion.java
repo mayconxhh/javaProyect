@@ -43,10 +43,10 @@ public class Conexion {
                         .setAutoNumber(true))
                         .addColumn(new ColumnBuilder("nombre", DataType.TEXT))
                         .addColumn(new ColumnBuilder("apellido", DataType.TEXT))
-                        .addColumn(new ColumnBuilder("dni", DataType.TEXT))
-                        //.addColumn(new ColumnBuilder("fecha", DataType.SHORT_DATE_TIME))
+                        .addColumn(new ColumnBuilder("dni", DataType.LONG))
+                        .addColumn(new ColumnBuilder("fecha", DataType.TEXT))
                         .addColumn(new ColumnBuilder("ecivil", DataType.TEXT))
-                        .addColumn(new ColumnBuilder("edad", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("edad", DataType.LONG))
                         .addColumn(new ColumnBuilder("genero", DataType.TEXT))
                         .addColumn(new ColumnBuilder("alergia", DataType.TEXT))
                         .addColumn(new ColumnBuilder("departamento", DataType.TEXT))
@@ -54,15 +54,15 @@ public class Conexion {
                         .addColumn(new ColumnBuilder("distrito", DataType.TEXT))
                         .addColumn(new ColumnBuilder("direccion", DataType.TEXT))
                         .addColumn(new ColumnBuilder("correo", DataType.TEXT))
-                        .addColumn(new ColumnBuilder("telefono", DataType.TEXT))
-                        .addColumn(new ColumnBuilder("altura", DataType.TEXT))
-                        .addColumn(new ColumnBuilder("peso", DataType.TEXT))
+                        .addColumn(new ColumnBuilder("telefono", DataType.LONG))
+                        .addColumn(new ColumnBuilder("altura", DataType.DOUBLE))
+                        .addColumn(new ColumnBuilder("peso", DataType.DOUBLE))
                         .addIndex(new IndexBuilder(IndexBuilder.PRIMARY_KEY_NAME)
                         .addColumns("id").setPrimaryKey())
                         .toTable(db);
 
                 // Fill table by data
-                tblNew.addRow(Column.AUTO_NUMBER, "John", "27", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf");
+                //tblNew.addRow(Column.AUTO_NUMBER, "John", "27", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf", "asddsffsfsdfdfsdfsdf");
                 /*tblNew.addRow(Column.AUTO_NUMBER, "John", 27);
                 tblNew.addRow(Column.AUTO_NUMBER, "Peter", 43);
                 tblNew.addRow(Column.AUTO_NUMBER, "Maycon", 21);*/
@@ -76,16 +76,17 @@ public class Conexion {
     private String username = "";
     private String password = "";
     private String url = "jdbc:ucanaccess://"+System.getProperty("user.dir").replace("\\", "/")+"/database/"+
-            database;
+            database+"/";
     
     public Connection conn = null;
     
     public Conexion(){
         this.ComprobationDB();
         try {
+            System.out.println("sdfsdfsdf");
             conn = DriverManager.getConnection(url, username, password);
         } catch (SQLException ex) {
-            System.out.println("Error al conectar base de datos:"+ex.getMessage());
+            System.out.println("Error al conectar base de datos:"+ex);
         }
     }
     
