@@ -15,6 +15,7 @@ import java.io.FileReader;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,6 +33,7 @@ public class Clinica extends javax.swing.JFrame {
         distritCbx.setUI(Propiedades.createUI(rootPane));
         provinceCbx.setUI(Propiedades.createUI(rootPane));
         this.loadData();
+        this.showDataAccess();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,7 +83,7 @@ public class Clinica extends javax.swing.JFrame {
         rSButtonRiple2 = new rojeru_san.RSButtonRiple();
         rSButtonRiple4 = new rojeru_san.RSButtonRiple();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableItems = new javax.swing.JTable();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
         rSMTextFull12 = new rojeru_san.RSMTextFull();
@@ -239,19 +241,27 @@ public class Clinica extends javax.swing.JFrame {
         rSButtonRiple4.setText("Editar");
         rSButtonRiple4.setColorHover(new java.awt.Color(255, 204, 51));
 
-        jTable1.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableItems.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        tableItems.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "NOMBRE", "APELLIDO", "DNI", "EDAD", "DIRECCION", "FECHA", "TELEFONO", "ALERGIA"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tableItems.setEditingColumn(0);
+        tableItems.setEditingRow(0);
+        tableItems.setEnabled(false);
+        jScrollPane1.setViewportView(tableItems);
 
         jSeparator2.setForeground(new java.awt.Color(0, 145, 252));
 
@@ -626,12 +636,13 @@ public class Clinica extends javax.swing.JFrame {
             edad.setText("");
             genero.setSelectedIndex(0);
             alergia.setText("");
-            departamentCbx.setSelectedItem(0);
-            provinceCbx.setSelectedItem(0);
-            distritCbx.setSelectedItem(0);
+            departamentCbx.setSelectedIndex(0);
+            provinceCbx.setSelectedIndex(0);
+            distritCbx.setSelectedIndex(0);
             direccion.setText("");
             correo.setText("");
             telefono.setText("");
+            altura.setText("");
             peso.setText("");
             
         } catch (SQLException ex) {
@@ -733,6 +744,73 @@ public class Clinica extends javax.swing.JFrame {
             cont++;
         }
     }
+    
+    //Cargar table
+    
+    //Carga de datos de tabla si existe
+    public void showDataAccess() {
+        try {
+            Conexion con = new Conexion();
+            String[] dts = new String[9];
+            Statement st = con.getConnection().createStatement();
+            ResultSet result = st.executeQuery("SELECT  * FROM CLINICA");
+            
+            DefaultTableModel modelo=(DefaultTableModel) tableItems.getModel();
+            
+            while(result.next()){
+                System.out.println(result.getString(1));
+                System.out.println(result.getString(2));
+                System.out.println(result.getString(3));
+                System.out.println(result.getString(4));
+                System.out.println(result.getString(5));
+                System.out.println(result.getString(6));
+                System.out.println(result.getString(7));
+                System.out.println(result.getString(8));
+                System.out.println(result.getString(9));
+                System.out.println(result.getString(10));
+                System.out.println(result.getString(11));
+                System.out.println(result.getString(12));
+                System.out.println(result.getString(13));
+                System.out.println(result.getString(14));
+                System.out.println(result.getString(15));
+                System.out.println(result.getString(16));
+                System.out.println(result.getString(17));
+                
+                
+                
+                dts[0] = result.getString(1);
+                dts[1] = result.getString(2);
+                dts[2] = result.getString(3);
+                dts[3] = result.getString(4);
+                dts[4] = result.getString(7);
+                dts[5] = result.getString(13);
+                dts[6] = result.getString(5);
+                dts[7] = result.getString(15);
+                dts[8] = result.getString(9);
+                
+                modelo.addRow(dts);
+                tableItems.setModel(modelo);                
+            }
+            
+            
+               /*String[] model = [{
+                    "ID",
+                    "NOMBRE",
+                    "APELLIDO",
+                    "DNI",
+                    "EDAD",
+                    "DIRECCION",
+                    "FECHA",
+                    "TELEFONO",
+                    "ALERGIA"
+                    
+                }]*/
+                        
+        } catch (SQLException ex) {
+            System.out.println("Error al guardar realizar consulta");
+        }
+        
+    };
     /**
      * @param args the command line arguments
      */
@@ -771,7 +849,6 @@ public class Clinica extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable jTable1;
     private rojeru_san.RSMTextFull nombre;
     private rojeru_san.RSMTextFull peso;
     private javax.swing.JLabel pesoo;
@@ -781,6 +858,7 @@ public class Clinica extends javax.swing.JFrame {
     private rojeru_san.RSButtonRiple rSButtonRiple2;
     private rojeru_san.RSButtonRiple rSButtonRiple4;
     private rojeru_san.RSMTextFull rSMTextFull12;
+    private javax.swing.JTable tableItems;
     private rojeru_san.RSMTextFull telefono;
     private javax.swing.JLabel telefonoo;
     // End of variables declaration//GEN-END:variables

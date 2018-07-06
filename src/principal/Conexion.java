@@ -83,7 +83,6 @@ public class Conexion {
     public Conexion(){
         this.ComprobationDB();
         try {
-            System.out.println("sdfsdfsdf");
             conn = DriverManager.getConnection(url, username, password);
         } catch (SQLException ex) {
             System.out.println("Error al conectar base de datos:"+ex);
